@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">prography_6th_android</string>
+
+    <string name="tab1">MOVIE</string>
+    <string name="tab2">CHATS</string>
+    <string name="tab3">CONTACTS</string>
+</resources>
