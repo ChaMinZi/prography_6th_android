@@ -1,18 +1,20 @@
 package com.example.prography_6th_android.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.prography_6th_android.DetailPageActivity;
 import com.example.prography_6th_android.Movie;
+import com.example.prography_6th_android.ParcelableMovieData;
 import com.example.prography_6th_android.R;
 import com.example.prography_6th_android.RecyclerAdapter;
 import com.example.prography_6th_android.RetrofitAPI;
@@ -66,7 +68,6 @@ public class MoiveFragment extends Fragment {
         @Override
         public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
             List<Movie> result = response.body();
-            Log.e("result", " id: "+result.get(0).getId() +" title : "+result.get(0).getTitle());
 
             ArrayList<Movie> movieList = new ArrayList<>();
             for (Movie re : result) {
@@ -80,7 +81,20 @@ public class MoiveFragment extends Fragment {
                 @Override
                 public void onItemClick(RecyclerAdapter.ViewHolder holder, View v, int positon) {
                     Movie item = recyclerAdapter.getItem(positon);
-                    Toast.makeText(getContext(), "아이템 선택됨 : "+item.getTitle(), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getContext(), DetailPageActivity.class);
+
+                    String[] inputData = new String[] {
+                            item.getTitle(),
+                            item.getDescription(),
+                            item.getDirector(),
+                            item.getProducer(),
+                            item.getReleaseDate(),
+                            item.getRtScore()
+                    };
+                    ParcelableMovieData data = new ParcelableMovieData(inputData);
+                    intent.putExtra("data", data);
+
+                    startActivityForResult(intent, 101);
                 }
             });
         }

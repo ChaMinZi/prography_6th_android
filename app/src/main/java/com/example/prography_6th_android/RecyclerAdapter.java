@@ -69,10 +69,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.movieIdTextView.setText("ID : "+movies.get(position).getId());
-        holder.titleTextView.setText("Title : "+movies.get(position).getTitle());
+        holder.movieIdTextView.setText(movies.get(position).getId());
+        holder.titleTextView.setText(movies.get(position).getTitle());
         holder.directorTextView.setText("Director : "+movies.get(position).getDirector());
-        holder.release_dateTextView.setText("ReleasDate : "+movies.get(position).getReleaseDate());
+        holder.release_dateTextView.setText(movies.get(position).getReleaseDate());
 
         holder.setOnItemClickListener(itemClickListener);
     }
