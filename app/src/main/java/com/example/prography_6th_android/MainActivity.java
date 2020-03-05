@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                Log.e("onPageSelecte", position+"");
+                Log.e("onPageSelected", position+"");
                 if (menuItem != null) {
                     menuItem.setChecked(false);
                 }

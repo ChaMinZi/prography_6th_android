@@ -36,8 +36,8 @@ public class DetailPageActivity extends AppCompatActivity {
         if (data != null) {
             title.setText(data.title);
             description.setText(data.description);
-            director.setText(data.director);
-            producer.setText(data.producer);
+            director.setText("[ 감독 ]  "+data.director);
+            producer.setText("[ 연출 ]  "+data.producer);
             release_date.setText(data.releaseDate);
             rt_score.setText(data.rtScore);
         }
