@@ -8,43 +8,56 @@
     tools:context=".DetailPageActivity"
     android:padding="15dp">
 
-    <TextView
-        android:id="@+id/title_detail"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Title"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:gravity="center" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/film"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/title_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Title"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/release_date_detail"
-            android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RatingBar
+            android:id="@+id/ratingbar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="releaseDate" />
+            android:numStars="5"
+            android:stepSize="0.01"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"/>
 
         <TextView
             android:id="@+id/rt_score_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp"
+            android:textSize="20dp"
             android:gravity="center"
             android:text="rtScore"/>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/description_detail"
-        android:layout_width="match_parent"
+        android:id="@+id/release_date_detail"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="description" />
+        android:text="releaseDate"
+        android:paddingTop="20dp"/>
 
     <TextView
         android:id="@+id/director_detail"
@@ -57,4 +70,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="producer" />
+
+    <TextView
+        android:id="@+id/description_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="description"
+        android:paddingTop="20dp"/>
 </LinearLayout>
